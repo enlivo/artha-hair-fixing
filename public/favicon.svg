@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-65 -75 130 140">
+  <circle cx="0" cy="8" r="62" fill="#1A2E22"/>
+  <circle cx="0" cy="8" r="54" fill="none" stroke="#C9A96E" stroke-width="2" stroke-dasharray="4,3"/>
+  <path d="M0,-28 C-4,-28 -9,-26 -13,-21 C-19,-13 -21,-3 -21,6 C-21,15 -17,24 -10,30 C-6,33 -3,34 0,34 C3,34 6,33 10,30 C17,24 21,15 21,6 C21,-3 19,-13 13,-21 C9,-26 4,-28 0,-28Z" fill="#0A0A0A"/>
+  <path d="M0,-28 Q0,-12 0,16" fill="none" stroke="#1A1A1A" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M-7,-26 Q-10,-10 -9,14" fill="none" stroke="#1A1A1A" stroke-width="1" stroke-linecap="round"/>
+  <path d="M7,-26 Q10,-10 9,14" fill="none" stroke="#1A1A1A" stroke-width="1" stroke-linecap="round"/>
+  <path d="M-21,26 Q-10,34 0,36 Q10,34 21,26" fill="none" stroke="#050505" stroke-width="2.5" stroke-linecap="round"/>
+  <g transform="translate(0,-36)">
+    <rect x="-18" y="12" width="36" height="8" rx="2.5" fill="#C9A96E"/>
+    <rect x="-18" y="12" width="36" height="3" rx="2" fill="#E8C97A" opacity="0.5"/>
+    <path d="M-18,12 L-14,-1 L-9,8 L-4,-6 L1,12" fill="#C9A96E"/>
+    <path d="M18,12 L14,-1 L9,8 L4,-6 L-1,12" fill="#C9A96E"/>
+    <circle cx="-14" cy="-1" r="2.5" fill="#FFFFFF"/>
+    <circle cx="0" cy="-8" r="3" fill="#FFFFFF"/>
+    <circle cx="14" cy="-1" r="2.5" fill="#FFFFFF"/>
+  </g>
+  <text x="0" y="56" font-family="Georgia,serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">ARTHA</text>
+</svg>
