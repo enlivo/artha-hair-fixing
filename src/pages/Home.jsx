@@ -3,6 +3,8 @@ import HeroSection from '../components/sections/HeroSection'
 import StatsBar from '../components/sections/StatsBar'
 import ServicesPreview from '../components/sections/ServicesPreview'
 import BeforeAfterSection from '../components/sections/BeforeAfterSection'
+import VideoShowcaseSection from '../components/sections/VideoShowcaseSection'
+import StudiosSection from '../components/sections/StudiosSection'
 import WhyUsSection from '../components/sections/WhyUsSection'
 import ProcessSection from '../components/sections/ProcessSection'
 import FreedomSection from '../components/sections/FreedomSection'
@@ -17,6 +19,8 @@ export default function Home() {
       <StatsBar />
       <ServicesPreview />
       <BeforeAfterSection />
+      <VideoShowcaseSection />
+      <StudiosSection />
       <WhyUsSection />
       <ProcessSection />
       <FreedomSection />

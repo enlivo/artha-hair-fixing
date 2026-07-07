@@ -1,17 +1,27 @@
 import { useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Sparkles, Layers, Shield, RefreshCw, Wind, Heart, Star, Zap, ArrowRight } from 'lucide-react'
 import { useModal } from '../../context/ModalContext'
 
 const ICONS = { Sparkles, Layers, Shield, RefreshCw, Wind, Heart, Star, Zap }
 
-export default function ServiceCard({ title, description, detail, icon, index = 0 }) {
+export default function ServiceCard({ title, description, detail, icon, slug, index = 0 }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-60px' })
   const [hovered, setHovered] = useState(false)
   const { openModal } = useModal()
+  const navigate = useNavigate()
   const Icon = ICONS[icon] || Sparkles
+  const detailHref = slug === 'hair-wigs' ? '/services/hair-wigs' : null
+
+  const handleCardClick = () => { if (detailHref) navigate(detailHref) }
+  const handleArrowClick = (e) => {
+    e.stopPropagation()
+    if (detailHref) navigate(detailHref)
+    else openModal()
+  }
 
   return (
     <motion.div
@@ -21,7 +31,8 @@ export default function ServiceCard({ title, description, detail, icon, index = 
       transition={{ duration: 0.5, delay: index * 0.08 }}
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
-      className="bg-white rounded-2xl p-7 flex flex-col gap-5 cursor-default relative overflow-hidden"
+      onClick={handleCardClick}
+      className={`bg-white rounded-2xl p-7 flex flex-col gap-5 relative overflow-hidden ${detailHref ? 'cursor-pointer' : 'cursor-default'}`}
       style={{
         border: '1px solid #C5E8D4',
         borderLeft: hovered ? '3px solid #C9A96E' : '1px solid #C5E8D4',
@@ -50,7 +61,7 @@ export default function ServiceCard({ title, description, detail, icon, index = 
       {/* Arrow circle CTA */}
       <div className="mt-auto flex justify-end">
         <motion.button
-          onClick={openModal}
+          onClick={handleArrowClick}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.93 }}
           className="w-9 h-9 rounded-full flex items-center justify-center transition-colors duration-250"
@@ -58,7 +69,7 @@ export default function ServiceCard({ title, description, detail, icon, index = 
             background: hovered ? '#2D6A4F' : '#EEF7F2',
             border: hovered ? '1px solid #2D6A4F' : '1px solid #C5E8D4',
           }}
-          aria-label="Book consultation"
+          aria-label={detailHref ? 'View Hair Wigs details' : 'Book consultation'}
         >
           <ArrowRight size={15} style={{ color: hovered ? '#ffffff' : '#2D6A4F' }} />
         </motion.button>

@@ -5,10 +5,22 @@ import BeforeAfterSlider from '../components/ui/BeforeAfterSlider'
 import CTABanner from '../components/sections/CTABanner'
 
 const cases = [
-  { label: 'Male Pattern Baldness — Stage IV', sub: 'Non-surgical hair patch, human hair', span: 2 },
-  { label: 'Diffuse Hair Thinning', sub: 'Hair topper with density enhancement' },
+  {
+    label: 'Male Pattern Baldness — Stage IV', sub: 'Non-surgical hair patch, human hair', span: 2,
+    beforeImage: '/images/before-after/malepatternbaldness-before.jpg',
+    afterImage: '/images/before-after/malepatternbaldness-after.jpg',
+  },
+  {
+    label: 'Diffuse Hair Thinning', sub: 'Hair topper with density enhancement',
+    beforeImage: '/images/before-after/diffusehairthinning-before.jpg',
+    afterImage: '/images/before-after/diffusehairthinning-after.jpg',
+  },
   { label: 'Alopecia Areata', sub: 'Full scalp hair system, lace front' },
-  { label: 'Receding Hairline', sub: 'Hairline restoration, natural skin taper' },
+  {
+    label: 'Receding Hairline', sub: 'Hairline restoration, natural skin taper',
+    beforeImage: '/images/before-after/recedinghairline-before.jpg',
+    afterImage: '/images/before-after/recedinghairline-after.jpg',
+  },
   { label: 'Post-Chemotherapy Regrowth', sub: 'Temporary wig, medically sensitive' },
   { label: 'Crown Balding', sub: 'Partial patch integration' },
 ]
@@ -35,7 +47,12 @@ export default function BeforeAfter() {
         <div className="container-xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
             <motion.div initial={{ opacity: 0, x: -40 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7 }}>
-              <BeforeAfterSlider beforeLabel="BEFORE" afterLabel="AFTER" />
+              <BeforeAfterSlider
+                beforeLabel="BEFORE"
+                afterLabel="AFTER"
+                beforeImage="/images/before-after/malepatternbaldness-before.jpg"
+                afterImage="/images/before-after/malepatternbaldness-after.jpg"
+              />
               <p className="text-center text-brand-muted text-xs mt-4">Drag slider to reveal</p>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 40 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7 }} className="flex flex-col gap-6">
@@ -56,6 +73,21 @@ export default function BeforeAfter() {
                     <p className="text-brand-dark font-semibold text-sm">{value}</p>
                   </div>
                 ))}
+              </div>
+              <div>
+                <p className="text-brand-muted text-xs uppercase tracking-wide font-medium mb-3">Detail Shots</p>
+                <div className="grid grid-cols-2 gap-3">
+                  <img
+                    src="/images/before-after/malepatternbaldness-detail-hairline.jpg"
+                    alt="Hairline detail — Male Pattern Baldness Stage IV"
+                    className="w-full h-32 object-cover rounded-xl border border-green-border"
+                  />
+                  <img
+                    src="/images/before-after/malepatternbaldness-detail-topview.jpg"
+                    alt="Top view detail — Male Pattern Baldness Stage IV"
+                    className="w-full h-32 object-cover rounded-xl border border-green-border"
+                  />
+                </div>
               </div>
             </motion.div>
           </div>
@@ -80,7 +112,7 @@ export default function BeforeAfter() {
                 className="flex flex-col gap-4"
                 style={c.span ? { gridColumn: `span ${c.span}` } : {}}
               >
-                <BeforeAfterSlider />
+                <BeforeAfterSlider beforeImage={c.beforeImage} afterImage={c.afterImage} />
                 <div>
                   <p className="text-brand-dark font-semibold text-sm">{c.label}</p>
                   <p className="text-brand-muted text-xs mt-0.5">{c.sub}</p>
