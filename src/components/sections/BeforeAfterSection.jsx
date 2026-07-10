@@ -5,9 +5,24 @@ import { ArrowRight } from 'lucide-react'
 import BeforeAfterSlider from '../ui/BeforeAfterSlider'
 import { fadeUp, slideLeft, slideRight } from '../../utils/animations'
 
+// Add more entries here as transformation-2-before.webp / transformation-2-after.webp
+// etc. arrive — the section currently features transformations[0], so a rotating
+// or multi-slider layout can be built on top of this array later without
+// restructuring the data.
+const transformations = [
+  {
+    id: 1,
+    before: '/transformation-1-before-face.webp',
+    after: '/transformation-1-after-face.webp',
+    beforeAlt: 'Hair patch transformation at Artha Hair Fixing — before',
+    afterAlt: 'Hair patch transformation at Artha Hair Fixing — after',
+  },
+]
+
 export default function BeforeAfterSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-80px' })
+  const featured = transformations[0]
 
   return (
     <section ref={ref} className="py-20 bg-white overflow-hidden">
@@ -18,7 +33,12 @@ export default function BeforeAfterSection() {
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
           >
-            <BeforeAfterSlider />
+            <BeforeAfterSlider
+              beforeImage={featured.before}
+              afterImage={featured.after}
+              beforeAlt={featured.beforeAlt}
+              afterAlt={featured.afterAlt}
+            />
             <p className="text-center text-brand-muted text-xs mt-4">Drag the slider to reveal the transformation</p>
           </motion.div>
 

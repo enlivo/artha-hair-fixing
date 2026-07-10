@@ -7,14 +7,14 @@ import { useModal } from '../../context/ModalContext'
 
 const ICONS = { Sparkles, Layers, Shield, RefreshCw, Wind, Heart, Star, Zap }
 
-export default function ServiceCard({ title, description, detail, icon, slug, index = 0 }) {
+export default function ServiceCard({ title, description, detail, icon, href, index = 0 }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-60px' })
   const [hovered, setHovered] = useState(false)
   const { openModal } = useModal()
   const navigate = useNavigate()
   const Icon = ICONS[icon] || Sparkles
-  const detailHref = slug === 'hair-wigs' ? '/services/hair-wigs' : null
+  const detailHref = href || null
 
   const handleCardClick = () => { if (detailHref) navigate(detailHref) }
   const handleArrowClick = (e) => {
@@ -69,7 +69,7 @@ export default function ServiceCard({ title, description, detail, icon, slug, in
             background: hovered ? '#2D6A4F' : '#EEF7F2',
             border: hovered ? '1px solid #2D6A4F' : '1px solid #C5E8D4',
           }}
-          aria-label={detailHref ? 'View Hair Wigs details' : 'Book consultation'}
+          aria-label={detailHref ? `View ${title} details` : 'Book consultation'}
         >
           <ArrowRight size={15} style={{ color: hovered ? '#ffffff' : '#2D6A4F' }} />
         </motion.button>

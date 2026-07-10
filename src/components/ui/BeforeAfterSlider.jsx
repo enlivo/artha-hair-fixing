@@ -1,6 +1,6 @@
 import { useState, useRef, useCallback } from 'react'
 
-export default function BeforeAfterSlider({ beforeLabel = 'BEFORE', afterLabel = 'AFTER', beforeImage, afterImage }) {
+export default function BeforeAfterSlider({ beforeLabel = 'BEFORE', afterLabel = 'AFTER', beforeImage, afterImage, beforeAlt, afterAlt }) {
   const [position, setPosition] = useState(50)
   const containerRef = useRef(null)
   const dragging = useRef(false)
@@ -41,8 +41,9 @@ export default function BeforeAfterSlider({ beforeLabel = 'BEFORE', afterLabel =
       {afterImage ? (
         <img
           src={afterImage}
-          alt={`${afterLabel} result`}
-          className="absolute inset-0 w-full h-full object-cover"
+          alt={afterAlt || `${afterLabel} result`}
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover object-top"
           draggable={false}
         />
       ) : (
@@ -66,8 +67,9 @@ export default function BeforeAfterSlider({ beforeLabel = 'BEFORE', afterLabel =
         {beforeImage ? (
           <img
             src={beforeImage}
-            alt={`${beforeLabel} condition`}
-            className="absolute inset-0 w-full h-full object-cover"
+            alt={beforeAlt || `${beforeLabel} condition`}
+            loading="lazy"
+            className="absolute inset-0 w-full h-full object-cover object-top"
             draggable={false}
           />
         ) : (
