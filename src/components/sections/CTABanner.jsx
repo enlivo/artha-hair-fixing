@@ -147,7 +147,7 @@ export default function CTABanner() {
           </motion.button>
 
           <motion.a
-            href={`tel:${contactInfo.phone}`}
+            href={contactInfo.phoneHref}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             style={{

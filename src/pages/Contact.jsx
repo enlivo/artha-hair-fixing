@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Phone, MessageCircle, Mail, MapPin, Clock, CheckCircle } from 'lucide-react'
+import { Phone, MessageCircle, Mail, Clock, CheckCircle } from 'lucide-react'
 import PageTransition from '../components/layout/PageTransition'
 import PageBanner from '../components/ui/PageBanner'
+import StudioLocations from '../components/sections/StudioLocations'
 import CTABanner from '../components/sections/CTABanner'
 import { services, contactInfo } from '../data/content'
 
@@ -108,18 +109,21 @@ export default function Contact() {
             </div>
 
             {/* Info */}
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-6 h-full">
               <h3 className="font-display text-brand-dark text-xl font-bold">Find Us</h3>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
-                  { icon: Phone, label: 'Phone', value: contactInfo.phone, href: `tel:${contactInfo.phone}` },
-                  { icon: MessageCircle, label: 'WhatsApp', value: 'Chat with us', href: `https://wa.me/${contactInfo.whatsapp}` },
+                  { icon: Phone, label: 'Phone', value: contactInfo.phone, href: contactInfo.phoneHref },
                   { icon: Mail, label: 'Email', value: contactInfo.email, href: `mailto:${contactInfo.email}` },
-                  { icon: MapPin, label: 'Address', value: contactInfo.address, href: contactInfo.maps },
-                ].map(({ icon: Icon, label, value, href }) => (
+                  {
+                    icon: MessageCircle, label: 'WhatsApp', value: 'Chat with us',
+                    href: `https://wa.me/${contactInfo.whatsapp}?text=${encodeURIComponent(contactInfo.whatsappMessage)}`,
+                    span: true,
+                  },
+                ].map(({ icon: Icon, label, value, href, span }) => (
                   <a key={label} href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer"
-                    className="flex gap-4 items-start p-5 rounded-2xl border border-green-border bg-green-tint/50 hover:bg-green-tint transition-colors no-underline"
+                    className={`flex gap-4 items-start p-5 rounded-2xl border border-green-border bg-green-tint/50 hover:bg-green-tint transition-colors no-underline ${span ? 'sm:col-span-2' : ''}`}
                   >
                     <div className="w-10 h-10 rounded-xl bg-green-tint flex items-center justify-center shrink-0">
                       <Icon size={16} className="text-green" />
@@ -133,7 +137,7 @@ export default function Contact() {
               </div>
 
               {/* Hours */}
-              <div className="rounded-2xl border border-green-border p-6">
+              <div className="rounded-2xl border border-green-border p-8 flex-1 flex flex-col justify-center">
                 <div className="flex items-center gap-2 mb-5">
                   <Clock size={16} className="text-green" />
                   <h4 className="text-brand-dark font-semibold text-sm">Working Hours</h4>
@@ -150,24 +154,17 @@ export default function Contact() {
                   ))}
                 </div>
               </div>
-
-              {/* Map */}
-              <div className="rounded-2xl border border-green-border overflow-hidden" style={{ height: '200px', background: '#EEF7F2' }}>
-                <div className="w-full h-full flex flex-col items-center justify-center gap-3">
-                  <MapPin size={28} className="text-green" />
-                  <div className="text-center">
-                    <p className="text-brand-dark font-semibold text-sm">Indiranagar, Bangalore</p>
-                    <p className="text-brand-muted text-xs mt-0.5">12th Main Road, Indiranagar</p>
-                  </div>
-                  <a href={contactInfo.maps} target="_blank" rel="noopener noreferrer" className="text-green text-xs font-semibold hover:underline">
-                    Open in Google Maps →
-                  </a>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
+
+      <StudioLocations
+        eyebrow="Our Locations"
+        heading="Visit Our Studios"
+        subtext="Multiple convenient locations across Bangalore — tap a card for directions"
+        sectionClassName="py-20 hair-pattern-green"
+      />
 
       <CTABanner />
     </PageTransition>

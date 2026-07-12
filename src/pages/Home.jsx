@@ -4,7 +4,7 @@ import StatsBar from '../components/sections/StatsBar'
 import ServicesPreview from '../components/sections/ServicesPreview'
 import BeforeAfterSection from '../components/sections/BeforeAfterSection'
 import VideoShowcaseSection from '../components/sections/VideoShowcaseSection'
-import StudiosSection from '../components/sections/StudiosSection'
+import StudioLocations from '../components/sections/StudioLocations'
 import WhyUsSection from '../components/sections/WhyUsSection'
 import ProcessSection from '../components/sections/ProcessSection'
 import FreedomSection from '../components/sections/FreedomSection'
@@ -20,7 +20,7 @@ export default function Home() {
       <ServicesPreview />
       <BeforeAfterSection />
       <VideoShowcaseSection />
-      <StudiosSection />
+      <StudioLocations />
       <WhyUsSection />
       <ProcessSection />
       <FreedomSection />

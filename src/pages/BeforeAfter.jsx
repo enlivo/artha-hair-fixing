@@ -11,18 +11,33 @@ const cases = [
     afterImage: '/images/before-after/malepatternbaldness-after.jpg',
   },
   {
-    label: 'Diffuse Hair Thinning', sub: 'Hair topper with density enhancement',
-    beforeImage: '/images/before-after/diffusehairthinning-before.jpg',
-    afterImage: '/images/before-after/diffusehairthinning-after.jpg',
+    label: 'Frontal Baldness', sub: 'Non-surgical hair patch, human hair',
+    beforeImage: '/transformation-2-before.webp',
+    afterImage: '/transformation-2-after.webp',
+    beforeAlt: 'Hair patch transformation at Artha Hair Fixing — before',
+    afterAlt: 'Hair patch transformation at Artha Hair Fixing — after',
   },
-  { label: 'Alopecia Areata', sub: 'Full scalp hair system, lace front' },
   {
-    label: 'Receding Hairline', sub: 'Hairline restoration, natural skin taper',
-    beforeImage: '/images/before-after/recedinghairline-before.jpg',
-    afterImage: '/images/before-after/recedinghairline-after.jpg',
+    label: 'Receding Hairline', sub: 'Non-surgical hair patch, human hair',
+    beforeImage: '/transformation-3-before.webp',
+    afterImage: '/transformation-3-after.webp',
+    beforeAlt: 'Hair patch transformation at Artha Hair Fixing — before',
+    afterAlt: 'Hair patch transformation at Artha Hair Fixing — after',
   },
-  { label: 'Post-Chemotherapy Regrowth', sub: 'Temporary wig, medically sensitive' },
-  { label: 'Crown Balding', sub: 'Partial patch integration' },
+  {
+    label: 'Frontal Hair Loss', sub: 'Non-surgical hair patch, human hair',
+    beforeImage: '/transformation-4-before.webp',
+    afterImage: '/transformation-4-after.webp',
+    beforeAlt: 'Hair patch transformation at Artha Hair Fixing — before',
+    afterAlt: 'Hair patch transformation at Artha Hair Fixing — after',
+  },
+  {
+    label: 'Age-Related Thinning', sub: 'Non-surgical hair patch, human hair',
+    beforeImage: '/transformation-5-before.webp',
+    afterImage: '/transformation-5-after.webp',
+    beforeAlt: 'Hair patch transformation at Artha Hair Fixing — before',
+    afterAlt: 'Hair patch transformation at Artha Hair Fixing — after',
+  },
 ]
 
 export default function BeforeAfter() {
@@ -112,7 +127,12 @@ export default function BeforeAfter() {
                 className="flex flex-col gap-4"
                 style={c.span ? { gridColumn: `span ${c.span}` } : {}}
               >
-                <BeforeAfterSlider beforeImage={c.beforeImage} afterImage={c.afterImage} />
+                <BeforeAfterSlider
+                  beforeImage={c.beforeImage}
+                  afterImage={c.afterImage}
+                  beforeAlt={c.beforeAlt}
+                  afterAlt={c.afterAlt}
+                />
                 <div>
                   <p className="text-brand-dark font-semibold text-sm">{c.label}</p>
                   <p className="text-brand-muted text-xs mt-0.5">{c.sub}</p>
@@ -128,7 +148,7 @@ export default function BeforeAfter() {
         <div className="container-xl">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
-              { title: '500+ Clients', desc: 'Transformations across Bangalore' },
+              { title: '4 Studios', desc: 'Transformations across Bangalore' },
               { title: 'Zero Compromise', desc: 'We show you real client results, not stock photos' },
               { title: 'Undetectable', desc: 'Results that pass the closest inspection' },
             ].map(({ title, desc }) => (

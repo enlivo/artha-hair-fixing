@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { NavLink } from 'react-router-dom'
 import { motion, useInView } from 'framer-motion'
-import { Phone, Mail, MapPin, Clock } from 'lucide-react'
+import { Phone, Mail, Clock } from 'lucide-react'
 import { contactInfo } from '../../data/content'
 import Logo from '../ui/Logo'
 
@@ -136,8 +136,7 @@ export default function Footer() {
             <h4 className="text-white font-semibold text-xs uppercase tracking-widest mb-6">Contact</h4>
             <div className="flex flex-col gap-4">
               {[
-                { icon: <MapPin size={14} />, text: contactInfo.address, href: contactInfo.maps },
-                { icon: <Phone size={14} />, text: contactInfo.phone, href: `tel:${contactInfo.phone}` },
+                { icon: <Phone size={14} />, text: contactInfo.phone, href: contactInfo.phoneHref },
                 { icon: <Mail size={14} />, text: contactInfo.email, href: `mailto:${contactInfo.email}` },
                 { icon: <Clock size={14} />, text: contactInfo.hours.weekdays },
                 { icon: <Clock size={14} />, text: contactInfo.hours.sunday },
@@ -163,7 +162,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-xs" style={{ color: '#3D5244' }}>
           <p>© {new Date().getFullYear()} Artha Hair Fixing. All rights reserved.</p>
-          <p>Made with care for Bangalore ✦ Indiranagar</p>
+          <p>Made with care for Bangalore</p>
         </div>
       </motion.div>
     </footer>

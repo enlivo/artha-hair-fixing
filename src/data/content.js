@@ -23,13 +23,13 @@ export const otherServices = [
 ]
 
 export const testimonials = [
-  { id: 1, name: 'Rajesh Kumar', location: 'Indiranagar, Bangalore', rating: 5, text: 'I was completely bald on top and too embarrassed to go out. Artha gave me a full head of hair in just 2 hours. Nobody can tell the difference. My confidence is completely back.', service: 'Hair Patch', initials: 'RK' },
+  { id: 1, name: 'Rajesh Kumar', location: 'HSR Layout, Bangalore', rating: 5, text: 'I was completely bald on top and too embarrassed to go out. Artha gave me a full head of hair in just 2 hours. Nobody can tell the difference. My confidence is completely back.', service: 'Hair Patch', initials: 'RK' },
   { id: 2, name: 'Priya Sharma', location: 'Koramangala, Bangalore', rating: 5, text: 'After hair loss due to health issues, I was devastated. The team at Artha understood exactly what I needed. The wig fits perfectly and feels completely natural.', service: 'Hair Wig', initials: 'PS' },
   { id: 3, name: 'Mohammed Farhan', location: 'Whitefield, Bangalore', rating: 5, text: 'Been coming to Artha for 2 years now. The bonding lasts a full month and looks completely natural even up close. Best hair fixing studio in Bangalore, no doubt.', service: 'Hair Bonding', initials: 'MF' },
 ]
 
 export const stats = [
-  { value: 500, suffix: '+', label: 'Happy Clients' },
+  { value: 5000, suffix: '+', label: 'Happy Clients' },
   { value: 10, suffix: '+', label: 'Years Experience' },
   { value: 1000, suffix: '+', label: 'Transformations' },
   { value: 100, suffix: '%', label: 'Natural Look' },
@@ -73,11 +73,12 @@ export const faqs = [
 ]
 
 export const contactInfo = {
-  phone: '+91 98450 XXXXX',
-  whatsapp: '919845000000',
-  email: 'hello@arthahairfixing.com',
-  address: '24, 1st Floor, 12th Main Road, Indiranagar, Bangalore - 560038',
+  phone: '+91 91102 21804',
+  phoneHref: 'tel:+919110221804',
+  whatsapp: '919110221804',
+  whatsappMessage: "Hi, I'd like to book a consultation",
+  email: 'hairfixingartha@gmail.com',
+  website: 'https://www.arthahairfixing.in',
   hours: { weekdays: 'Monday – Saturday: 10:00 AM – 7:00 PM', sunday: 'Sunday: 11:00 AM – 5:00 PM' },
   instagram: 'https://www.instagram.com/hairfixingartha/',
-  maps: 'https://maps.google.com/?q=Indiranagar+Bangalore',
 }

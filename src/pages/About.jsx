@@ -15,9 +15,8 @@ const values = [
 ]
 
 const team = [
-  { name: 'Arjun Nair', role: 'Founder & Senior Specialist', experience: '12 Years Experience', initials: 'AN' },
-  { name: 'Deepa Krishnan', role: 'Lead Hair Stylist', experience: '8 Years Experience', initials: 'DK' },
-  { name: 'Rahul Mehta', role: 'Scalp Care Expert', experience: '6 Years Experience', initials: 'RM' },
+  { name: 'Manjunath L', role: 'Founder & Senior Hair Specialist', photo: '/founder-1-pro.webp' },
+  { name: 'Larshitha S', role: 'Co-Founder', photo: '/founder-2-pro.webp' },
 ]
 
 export default function About() {
@@ -49,9 +48,8 @@ export default function About() {
                 <span className="text-green italic"> Everyone Deserves Confidence</span>
               </h2>
               <div className="flex flex-col gap-5 text-brand-body leading-relaxed">
-                <p>Artha Hair Fixing was founded in 2014 in the heart of Indiranagar, Bangalore, by specialists who witnessed firsthand the devastating impact hair loss can have on a person's confidence and quality of life.</p>
-                <p>Over a decade later, we've transformed 500+ lives with non-surgical hair solutions that are indistinguishable from natural hair. We use only 100% ethically sourced human hair and tailor every solution to the individual.</p>
-                <p>We believe in transparency, craftsmanship, and compassion at every step — from your first call to your monthly maintenance visit.</p>
+                <p>Artha Hair Fixing was started by specialists who saw firsthand how much hair loss can affect a person's confidence — and how much of that confidence returns with the right solution.</p>
+                <p>Today we run 4 studios across Bangalore — RR Nagar, Jayanagar, Konanakunte, and Rajajinagar — offering non-surgical hair solutions made with 100% human hair, tailored to each individual. Transparency, craftsmanship, and care at every step.</p>
               </div>
             </motion.div>
 
@@ -65,8 +63,8 @@ export default function About() {
                 onError={(e) => { e.target.onerror = null; e.target.src = 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80' }}
               />
               <div className="absolute -bottom-5 -left-5 bg-green text-white rounded-2xl px-6 py-4">
-                <p className="font-display text-3xl font-bold">10+</p>
-                <p className="text-green-light text-xs font-medium mt-0.5">Years of Expertise</p>
+                <p className="font-display text-3xl font-bold">4</p>
+                <p className="text-green-light text-xs font-medium mt-0.5">Studios Across Bangalore</p>
               </div>
             </motion.div>
           </div>
@@ -112,8 +110,8 @@ export default function About() {
             <h2 className="section-heading mt-3">Meet Our Team</h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {team.map(({ name, role, experience, initials }, i) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            {team.map(({ name, role, photo }, i) => (
               <motion.div
                 key={name}
                 initial={{ opacity: 0, y: 32 }}
@@ -122,15 +120,17 @@ export default function About() {
                 whileHover={{ y: -5, boxShadow: '0 16px 40px rgba(45,106,79,0.1)' }}
                 className="bg-white rounded-2xl overflow-hidden border border-green-border"
               >
-                <div className="aspect-[4/3] bg-green-tint flex items-center justify-center">
-                  <div className="w-24 h-24 rounded-full bg-green flex items-center justify-center text-white font-display text-3xl font-bold">
-                    {initials}
-                  </div>
+                <div className="aspect-[4/5] bg-green-tint">
+                  <img
+                    src={photo}
+                    alt={`${name} — ${role}`}
+                    loading="lazy"
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="font-display text-brand-dark text-lg font-bold">{name}</h3>
                   <p className="text-green text-sm mt-1">{role}</p>
-                  <p className="text-brand-muted text-xs mt-1">{experience}</p>
                 </div>
               </motion.div>
             ))}
@@ -145,7 +145,7 @@ export default function About() {
           <p className="font-accent italic text-brand-dark text-2xl leading-relaxed mb-8">
             We are not just fixing hair. We are restoring identity, rebuilding confidence, and returning the freedom to live life fully — one client at a time.
           </p>
-          <p className="text-green font-semibold text-sm">— Arjun Nair, Founder, Artha Hair Fixing</p>
+          <p className="text-green font-semibold text-sm">— Manjunath L, Founder, Artha Hair Fixing</p>
           <button onClick={openModal} className="btn-primary text-sm px-8 py-4 mt-10">Book Your Free Consultation</button>
         </div>
       </section>
