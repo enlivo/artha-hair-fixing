@@ -8,8 +8,8 @@ const steps = [
     num: '01',
     title: 'Free Consultation',
     description: 'Private one-on-one session to assess your hair loss pattern and discuss your goals. No commitment, just possibilities.',
-    img: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=80',
-    alt: 'Scalp examination during consultation',
+    img: '/consultation-step.webp',
+    alt: 'Hair specialist consulting with a client at Artha Hair Fixing',
   },
   {
     num: '02',
