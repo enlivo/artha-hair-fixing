@@ -84,11 +84,12 @@ export default function Footer() {
             </p>
             <div className="flex gap-3 mt-2">
               {[
-                { icon: <InstagramIcon size={17} />, href: contactInfo.instagram },
-                { icon: <YtIcon size={17} />, href: '#' },
-                { icon: <FbIcon size={17} />, href: '#' },
-              ].map(({ icon, href }, i) => (
+                { icon: <InstagramIcon size={17} />, href: contactInfo.instagram, label: 'Instagram' },
+                { icon: <YtIcon size={17} />, href: 'https://www.youtube.com/@arthahairfixingnonsurgical1071', label: 'YouTube' },
+                { icon: <FbIcon size={17} />, href: 'https://www.facebook.com/people/Artha-Hair-Fixing/100063714079154/', label: 'Facebook' },
+              ].map(({ icon, href, label }, i) => (
                 <a key={i} href={href} target="_blank" rel="noopener noreferrer"
+                  aria-label={`Artha Hair Fixing Beauty on ${label}`}
                   className="w-9 h-9 rounded-full flex items-center justify-center transition-colors duration-200"
                   style={{ border: '1px solid rgba(255,255,255,0.15)', color: '#A8BDB4' }}
                   onMouseEnter={(e) => { e.currentTarget.style.color = '#C9A96E'; e.currentTarget.style.borderColor = '#C9A96E' }}
