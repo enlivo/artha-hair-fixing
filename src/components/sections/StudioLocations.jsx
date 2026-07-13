@@ -21,6 +21,7 @@ const studios = [
   { name: 'Jayanagar', photo: null, mapsUrl: buildMapsUrl('Jayanagar'), mapsEmbedUrl: buildMapsEmbedUrl('Jayanagar') },
   { name: 'Konanakunte', photo: null, mapsUrl: buildMapsUrl('Konanakunte'), mapsEmbedUrl: buildMapsEmbedUrl('Konanakunte') },
   { name: 'Rajajinagar', photo: null, mapsUrl: buildMapsUrl('Rajajinagar'), mapsEmbedUrl: buildMapsEmbedUrl('Rajajinagar') },
+  { name: 'Whitefield', photo: null, mapsUrl: buildMapsUrl('Whitefield'), mapsEmbedUrl: buildMapsEmbedUrl('Whitefield') },
 ]
 
 function StudioCard({ studio, index, isInView }) {
@@ -42,7 +43,7 @@ function StudioCard({ studio, index, isInView }) {
         <>
           <img
             src={studio.photo}
-            alt={`Artha Hair Fixing — ${studio.name} studio`}
+            alt={`Artha Hair Fixing Beauty — ${studio.name} studio`}
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div
@@ -109,7 +110,7 @@ export default function StudioLocations({
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-6">
           {studios.map((studio, i) => (
             <StudioCard key={studio.name} studio={studio} index={i} isInView={isInView} />
           ))}

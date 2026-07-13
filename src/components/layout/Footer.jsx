@@ -14,7 +14,7 @@ const navLinks = [
   { to: '/contact', label: 'Contact' },
 ]
 
-const serviceLinks = ['Hair Wigs', 'Hair Bonding', 'Hair Patch', 'Hair Replacement', 'Hair Extensions', 'Scalp Treatment']
+const serviceLinks = ['Hair Bonding', 'Hair Clipping', 'Hair Weaving', 'Hair Patch Service', 'Ladies Hair Toppers']
 
 function YtIcon({ size = 18, color = 'currentColor' }) {
   return (
@@ -161,7 +161,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-xs" style={{ color: '#3D5244' }}>
-          <p>© {new Date().getFullYear()} Artha Hair Fixing. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Artha Hair Fixing Beauty. All rights reserved.</p>
           <p>Made with care for Bangalore</p>
         </div>
       </motion.div>

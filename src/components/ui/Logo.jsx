@@ -102,7 +102,7 @@ export default function Logo({ size = 'md', theme = 'light' }) {
             color: '#C9A96E',
             letterSpacing: '1px',
           }}>
-            Hair Fixing
+            Hair Fixing Beauty
           </span>
         </div>
       )}

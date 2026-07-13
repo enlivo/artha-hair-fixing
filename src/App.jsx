@@ -9,7 +9,6 @@ import BookingModal from './components/ui/BookingModal'
 import ScrollProgress from './components/ScrollProgress'
 import Home from './pages/Home'
 import Services from './pages/Services'
-import HairWigs from './pages/HairWigs'
 import BeforeAfter from './pages/BeforeAfter'
 import About from './pages/About'
 import FAQ from './pages/FAQ'
@@ -22,7 +21,6 @@ function AnimatedRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/services/hair-wigs" element={<HairWigs />} />
         <Route path="/before-after" element={<BeforeAfter />} />
         <Route path="/about" element={<About />} />
         <Route path="/faq" element={<FAQ />} />

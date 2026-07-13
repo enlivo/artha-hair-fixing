@@ -14,29 +14,29 @@ const cases = [
     label: 'Frontal Baldness', sub: 'Non-surgical hair patch, human hair',
     beforeImage: '/transformation-2-before.webp',
     afterImage: '/transformation-2-after.webp',
-    beforeAlt: 'Hair patch transformation at Artha Hair Fixing — before',
-    afterAlt: 'Hair patch transformation at Artha Hair Fixing — after',
+    beforeAlt: 'Hair patch transformation at Artha Hair Fixing Beauty — before',
+    afterAlt: 'Hair patch transformation at Artha Hair Fixing Beauty — after',
   },
   {
     label: 'Receding Hairline', sub: 'Non-surgical hair patch, human hair',
     beforeImage: '/transformation-3-before.webp',
     afterImage: '/transformation-3-after.webp',
-    beforeAlt: 'Hair patch transformation at Artha Hair Fixing — before',
-    afterAlt: 'Hair patch transformation at Artha Hair Fixing — after',
+    beforeAlt: 'Hair patch transformation at Artha Hair Fixing Beauty — before',
+    afterAlt: 'Hair patch transformation at Artha Hair Fixing Beauty — after',
   },
   {
     label: 'Frontal Hair Loss', sub: 'Non-surgical hair patch, human hair',
     beforeImage: '/transformation-4-before.webp',
     afterImage: '/transformation-4-after.webp',
-    beforeAlt: 'Hair patch transformation at Artha Hair Fixing — before',
-    afterAlt: 'Hair patch transformation at Artha Hair Fixing — after',
+    beforeAlt: 'Hair patch transformation at Artha Hair Fixing Beauty — before',
+    afterAlt: 'Hair patch transformation at Artha Hair Fixing Beauty — after',
   },
   {
     label: 'Age-Related Thinning', sub: 'Non-surgical hair patch, human hair',
     beforeImage: '/transformation-5-before.webp',
     afterImage: '/transformation-5-after.webp',
-    beforeAlt: 'Hair patch transformation at Artha Hair Fixing — before',
-    afterAlt: 'Hair patch transformation at Artha Hair Fixing — after',
+    beforeAlt: 'Hair patch transformation at Artha Hair Fixing Beauty — before',
+    afterAlt: 'Hair patch transformation at Artha Hair Fixing Beauty — after',
   },
 ]
 
@@ -148,7 +148,7 @@ export default function BeforeAfter() {
         <div className="container-xl">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
-              { title: '4 Studios', desc: 'Transformations across Bangalore' },
+              { title: '5 Studios', desc: 'Transformations across Bangalore' },
               { title: 'Zero Compromise', desc: 'We show you real client results, not stock photos' },
               { title: 'Undetectable', desc: 'Results that pass the closest inspection' },
             ].map(({ title, desc }) => (

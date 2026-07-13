@@ -15,7 +15,7 @@ function InstagramIcon({ size = 20, color = 'currentColor' }) {
 const FALLBACK = 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80'
 
 const posts = [
-  { id: 1, src: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=400&q=80', alt: 'Hair wig transformation' },
+  { id: 1, src: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=400&q=80', alt: 'Hair transformation' },
   { id: 2, src: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&q=80', alt: 'Hair patch before and after' },
   { id: 3, src: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&q=80', alt: 'Hair restoration result' },
   { id: 4, src: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=400&q=80', alt: 'Hair patch fitting' },

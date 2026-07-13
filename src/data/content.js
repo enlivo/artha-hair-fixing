@@ -1,30 +1,14 @@
 export const services = [
-  { id: 1, slug: 'hair-wigs', title: 'Hair Wigs', icon: 'Sparkles', description: 'Premium natural and synthetic wigs crafted for an undetectable, confident look for men and women.', detail: 'Custom-fitted to your scalp shape using 100% human hair. Available in all textures, lengths, and colors.', href: '/services' },
-  { id: 2, slug: 'hair-bonding', title: 'Hair Bonding', icon: 'Layers', description: 'Advanced bonding technique that attaches hair systems directly to the scalp for a natural hairline.', detail: 'Long-lasting, waterproof bonding that lets you swim, gym, and live freely.', href: '/services' },
-  { id: 3, slug: 'hair-patch', title: 'Hair Patch', icon: 'Shield', description: 'Non-surgical hair patches that blend seamlessly with your existing hair, covering bald spots instantly.', detail: 'Available in skin, lace, and monofilament base types for maximum breathability.', href: '/services' },
-  { id: 4, slug: 'hair-replacement', title: 'Non-Surgical Hair Replacement', icon: 'RefreshCw', description: 'Complete hair replacement without surgery, downtime, or side effects.', detail: 'A safe, painless alternative to hair transplants. Walk in and walk out transformed.' },
-  { id: 5, slug: 'hair-extensions', title: 'Hair Extensions', icon: 'Wind', description: 'Add length, volume, and dimension with our premium hair extensions.', detail: 'Available in tape-in, clip-in, and fusion methods. Matched to your exact color and texture.' },
-  { id: 6, slug: 'scalp-treatment', title: 'Scalp Treatment', icon: 'Heart', description: 'Therapeutic treatments to improve hair health, reduce hair fall, and stimulate growth.', detail: 'Personalized plans combining scalp massage, nourishing serums, and care routines.' },
-]
-
-export const otherServices = [
-  'Hair Service Maintenance for Men & Women',
-  'Wash and Blow Dry',
-  'Hair System Repair & Removal',
-  'Hair & Styling',
-  'Fitting / Hair System Installation',
-  "Men's Haircut",
-  "Women's Haircut",
-  'Hair Color for Men & Women',
-  'Hair System Perming',
-  'Keratin Hair Treatment',
-  'Scalp Treatment',
-  'Custom Hair Systems',
+  { id: 1, slug: 'hair-bonding', title: 'Hair Bonding', icon: 'Layers', description: 'Advanced bonding technique that attaches hair systems directly to the scalp for a natural hairline.', detail: 'Long-lasting, waterproof bonding that lets you swim, gym, and live freely.', href: '/services', photo: '/services/wig-06-hairline-detail.webp', photoAlt: 'Natural hairline detail close-up' },
+  { id: 2, slug: 'hair-clipping', title: 'Hair Clipping', icon: 'Paperclip', description: 'Clip-on hair systems that attach securely without glue — easy to wear and remove.', detail: 'A flexible, low-commitment way to add density and coverage on your own schedule.', href: '/services', photo: '/services/wig-01-side-profile.webp', photoAlt: 'Hair system side profile view' },
+  { id: 3, slug: 'hair-weaving', title: 'Hair Weaving', icon: 'GitMerge', description: 'Hair systems woven into your existing natural hair for a secure, breathable fit.', detail: 'Blends seamlessly with your own hair for an undetectable, all-day comfortable hold.', href: '/services', photo: '/services/wig-05-full-lace-topview.webp', photoAlt: 'Full lace hair system base — top view' },
+  { id: 4, slug: 'hair-patch-service', title: 'Hair Patch Service', icon: 'Shield', description: 'Non-surgical hair patches that blend seamlessly with your existing hair, covering bald spots instantly.', detail: 'Available in skin, lace, and monofilament base types for maximum breathability.', href: '/services', photo: '/services/wig-12-base-type-06.webp', photoAlt: 'Hair patch base type sample' },
+  { id: 5, slug: 'ladies-hair-toppers', title: 'Ladies Hair Toppers', icon: 'Crown', description: 'Discreet hair toppers designed for women, adding volume and coverage for thinning areas.', detail: 'Lightweight and natural-looking, blending effortlessly with your own hair part and texture.', href: '/services', photo: '/services/wig-04-cap-flat.webp', photoAlt: 'Hair topper cap laid flat' },
 ]
 
 export const testimonials = [
-  { id: 1, name: 'Rajesh Kumar', location: 'HSR Layout, Bangalore', rating: 5, text: 'I was completely bald on top and too embarrassed to go out. Artha gave me a full head of hair in just 2 hours. Nobody can tell the difference. My confidence is completely back.', service: 'Hair Patch', initials: 'RK' },
-  { id: 2, name: 'Priya Sharma', location: 'Koramangala, Bangalore', rating: 5, text: 'After hair loss due to health issues, I was devastated. The team at Artha understood exactly what I needed. The wig fits perfectly and feels completely natural.', service: 'Hair Wig', initials: 'PS' },
+  { id: 1, name: 'Rajesh Kumar', location: 'HSR Layout, Bangalore', rating: 5, text: 'I was completely bald on top and too embarrassed to go out. Artha gave me a full head of hair in just 2 hours. Nobody can tell the difference. My confidence is completely back.', service: 'Hair Patch Service', initials: 'RK' },
+  { id: 2, name: 'Priya Sharma', location: 'Koramangala, Bangalore', rating: 5, text: 'After hair loss due to health issues, I was devastated. The team at Artha understood exactly what I needed. The topper fits perfectly and feels completely natural.', service: 'Ladies Hair Toppers', initials: 'PS' },
   { id: 3, name: 'Mohammed Farhan', location: 'Whitefield, Bangalore', rating: 5, text: 'Been coming to Artha for 2 years now. The bonding lasts a full month and looks completely natural even up close. Best hair fixing studio in Bangalore, no doubt.', service: 'Hair Bonding', initials: 'MF' },
 ]
 
@@ -60,7 +44,7 @@ export const freedomItems = [
 ]
 
 export const faqs = [
-  { id: 1, category: 'Hair Systems', question: 'How long does a hair patch or wig last?', answer: 'With proper care, our hair systems last 6–12 months. We offer regular maintenance services to extend their life and keep them looking natural.' },
+  { id: 1, category: 'Hair Systems', question: 'How long does a hair patch or hair system last?', answer: 'With proper care, our hair systems last 6–12 months. We offer regular maintenance services to extend their life and keep them looking natural.' },
   { id: 2, category: 'Hair Systems', question: 'Will it look completely natural?', answer: "Absolutely. We use 100% human hair matched to your exact texture and color. Even people very close to you won't be able to tell the difference." },
   { id: 3, category: 'Maintenance', question: 'How often do I need to come back for maintenance?', answer: 'We recommend a maintenance visit every 3–4 weeks for re-bonding and styling to keep your hair system looking perfect.' },
   { id: 4, category: 'Maintenance', question: 'Can I swim and exercise with a hair patch?', answer: 'Yes! Our bonding and fitting techniques are fully waterproof and secure through all physical activities — swimming, gym, yoga, everything.' },

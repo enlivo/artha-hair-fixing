@@ -14,8 +14,8 @@ const transformations = [
     id: 1,
     before: '/transformation-1-before-face.webp',
     after: '/transformation-1-after-face.webp',
-    beforeAlt: 'Hair patch transformation at Artha Hair Fixing — before',
-    afterAlt: 'Hair patch transformation at Artha Hair Fixing — after',
+    beforeAlt: 'Hair patch transformation at Artha Hair Fixing Beauty — before',
+    afterAlt: 'Hair patch transformation at Artha Hair Fixing Beauty — after',
   },
 ]
 
@@ -53,7 +53,7 @@ export default function BeforeAfterSection() {
               <span className="text-green">for You</span>
             </motion.h2>
             <motion.p variants={fadeUp} className="text-brand-body text-lg leading-relaxed">
-              Every transformation you see is a real person who walked into Artha Hair Fixing and left with renewed confidence. Our non-surgical solutions are natural, undetectable, and last for months.
+              Every transformation you see is a real person who walked into Artha Hair Fixing Beauty and left with renewed confidence. Our non-surgical solutions are natural, undetectable, and last for months.
             </motion.p>
 
             <motion.ul variants={fadeUp} className="flex flex-col gap-3 mt-2">

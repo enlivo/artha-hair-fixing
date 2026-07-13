@@ -15,8 +15,8 @@ const values = [
 ]
 
 const team = [
-  { name: 'Manjunath L', role: 'Founder & Senior Hair Specialist', photo: '/founder-1-pro.webp' },
-  { name: 'Larshitha S', role: 'Co-Founder', photo: '/founder-2-pro.webp' },
+  { name: 'Larshitha S', role: 'Founder', photo: '/founder-2-pro.webp' },
+  { name: 'Manjunath L', role: 'Co-Founder & Managing Director', photo: '/founder-1-pro.webp' },
 ]
 
 export default function About() {
@@ -48,22 +48,22 @@ export default function About() {
                 <span className="text-green italic"> Everyone Deserves Confidence</span>
               </h2>
               <div className="flex flex-col gap-5 text-brand-body leading-relaxed">
-                <p>Artha Hair Fixing was started by specialists who saw firsthand how much hair loss can affect a person's confidence — and how much of that confidence returns with the right solution.</p>
-                <p>Today we run 4 studios across Bangalore — RR Nagar, Jayanagar, Konanakunte, and Rajajinagar — offering non-surgical hair solutions made with 100% human hair, tailored to each individual. Transparency, craftsmanship, and care at every step.</p>
+                <p>Artha Hair Fixing Beauty was started by specialists who saw firsthand how much hair loss can affect a person's confidence — and how much of that confidence returns with the right solution.</p>
+                <p>Today we run 5 studios across Bangalore — RR Nagar, Jayanagar, Konanakunte, Rajajinagar, and Whitefield — offering non-surgical hair solutions made with 100% human hair, tailored to each individual. Transparency, craftsmanship, and care at every step.</p>
               </div>
             </motion.div>
 
             <motion.div initial={{ opacity: 0, x: 40 }} animate={storyInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7 }} className="relative">
               <img
                 src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=800&q=80"
-                alt="Artha Hair Fixing Studio interior in Bangalore"
+                alt="Artha Hair Fixing Beauty Studio interior in Bangalore"
                 className="w-full rounded-3xl object-cover"
                 style={{ border: '1px solid #C5E8D4', boxShadow: '0 24px 60px rgba(45,106,79,0.12)', aspectRatio: '1', objectFit: 'cover' }}
                 loading="lazy"
                 onError={(e) => { e.target.onerror = null; e.target.src = 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80' }}
               />
               <div className="absolute -bottom-5 -left-5 bg-green text-white rounded-2xl px-6 py-4">
-                <p className="font-display text-3xl font-bold">4</p>
+                <p className="font-display text-3xl font-bold">5</p>
                 <p className="text-green-light text-xs font-medium mt-0.5">Studios Across Bangalore</p>
               </div>
             </motion.div>
@@ -145,7 +145,7 @@ export default function About() {
           <p className="font-accent italic text-brand-dark text-2xl leading-relaxed mb-8">
             We are not just fixing hair. We are restoring identity, rebuilding confidence, and returning the freedom to live life fully — one client at a time.
           </p>
-          <p className="text-green font-semibold text-sm">— Manjunath L, Founder, Artha Hair Fixing</p>
+          <p className="text-green font-semibold text-sm">— Larshitha S, Founder, Artha Hair Fixing Beauty</p>
           <button onClick={openModal} className="btn-primary text-sm px-8 py-4 mt-10">Book Your Free Consultation</button>
         </div>
       </section>

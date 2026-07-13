@@ -169,7 +169,7 @@ export default function HeroSection() {
         >
           <span>★ 4.9 Google Rating</span>
           <span className="opacity-40">·</span>
-          <span>4 Studios in Bangalore</span>
+          <span>5 Studios in Bangalore</span>
           <span className="opacity-40">·</span>
           <span>10+ Years</span>
         </motion.div>
@@ -180,7 +180,7 @@ export default function HeroSection() {
       <div className="relative lg:w-[55%] overflow-hidden" style={{ minHeight: '60vw', maxHeight: '100svh' }}>
         <img
           src={HERO_IMAGE}
-          alt="Man with hair loss viewed from behind — before visiting Artha Hair Fixing"
+          alt="Man with hair loss viewed from behind — before visiting Artha Hair Fixing Beauty"
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
           fetchpriority="high"
@@ -202,7 +202,7 @@ export default function HeroSection() {
           >
             <CheckCircle size={16} style={{ color: '#2D6A4F', flexShrink: 0 }} />
             <div>
-              <p className="font-medium text-sm" style={{ color: '#1A2E22', lineHeight: 1.2 }}>4 Studios</p>
+              <p className="font-medium text-sm" style={{ color: '#1A2E22', lineHeight: 1.2 }}>5 Studios</p>
               <p style={{ color: '#7A9485', fontSize: '11px' }}>in Bangalore</p>
             </div>
           </motion.div>

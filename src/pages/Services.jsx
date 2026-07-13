@@ -1,13 +1,99 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown, X } from 'lucide-react'
 import PageTransition from '../components/layout/PageTransition'
 import PageBanner from '../components/ui/PageBanner'
 import ServiceCard from '../components/ui/ServiceCard'
 import ProcessSection from '../components/sections/ProcessSection'
 import CTABanner from '../components/sections/CTABanner'
-import { services, otherServices, faqs } from '../data/content'
+import { services, faqs } from '../data/content'
 import { useModal } from '../context/ModalContext'
+
+const serviceGalleries = [
+  {
+    slug: 'hair-patch-service',
+    title: 'Hair Patch Service',
+    images: [
+      { src: '/services/wig-07-base-type-01.webp', alt: 'Hair patch base type 1' },
+      { src: '/services/wig-08-base-type-02.webp', alt: 'Hair patch base type 2' },
+      { src: '/services/wig-09-base-type-03.webp', alt: 'Hair patch base type 3' },
+      { src: '/services/wig-10-base-type-04.webp', alt: 'Hair patch base type 4' },
+      { src: '/services/wig-11-base-type-05.webp', alt: 'Hair patch base type 5' },
+      { src: '/services/wig-12-base-type-06.webp', alt: 'Hair patch base type 6' },
+      { src: '/services/wig-13-base-type-07.webp', alt: 'Hair patch base type 7' },
+    ],
+  },
+  {
+    slug: 'hair-bonding',
+    title: 'Hair Bonding',
+    images: [
+      { src: '/services/wig-03-lace-front-closeup.webp', alt: 'Lace front closeup detail' },
+      { src: '/services/wig-09-base-type-03.webp', alt: 'Hair patch base type 3' },
+    ],
+  },
+  {
+    slug: 'hair-clipping',
+    title: 'Hair Clipping',
+    images: [
+      { src: '/services/wig-02-back-view.webp', alt: 'Hair system back view' },
+      { src: '/services/wig-10-base-type-04.webp', alt: 'Hair patch base type 4' },
+    ],
+  },
+  {
+    slug: 'ladies-hair-toppers',
+    title: 'Ladies Hair Toppers',
+    images: [
+      { src: '/services/wig-04-cap-flat.webp', alt: 'Hair topper cap laid flat' },
+    ],
+  },
+]
+
+function Lightbox({ image, onClose }) {
+  useEffect(() => {
+    if (!image) return
+    const onKey = (e) => { if (e.key === 'Escape') onClose() }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [image, onClose])
+
+  return (
+    <AnimatePresence>
+      {image && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={onClose}
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+          style={{ background: 'rgba(26,46,34,0.92)', backdropFilter: 'blur(12px)' }}
+        >
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            transition={{ type: 'spring', damping: 25, stiffness: 220 }}
+            onClick={(e) => e.stopPropagation()}
+            className="relative max-w-3xl w-full"
+          >
+            <img
+              src={image.src}
+              alt={image.alt}
+              className="w-full rounded-2xl"
+              style={{ maxHeight: '80vh', objectFit: 'contain' }}
+            />
+            <button
+              onClick={onClose}
+              aria-label="Close"
+              className="absolute -top-3 -right-3 w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg text-brand-dark hover:bg-green-tint transition-colors"
+            >
+              <X size={18} />
+            </button>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  )
+}
 
 function FAQItem({ question, answer, index }) {
   const [open, setOpen] = useState(false)
@@ -55,6 +141,7 @@ export default function Services() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-60px' })
   const { openModal } = useModal()
+  const [lightboxImage, setLightboxImage] = useState(null)
 
   return (
     <PageTransition>
@@ -89,30 +176,44 @@ export default function Services() {
         </div>
       </section>
 
-      {/* ── ADDITIONAL SERVICES ── */}
-      <section className="py-16 hair-pattern-green">
+      {/* ── PHOTO GALLERY ── */}
+      <section className="py-20" style={{ background: '#EEF7F2' }}>
         <div className="container-xl">
-          <div className="mb-10">
-            <span className="section-eyebrow">More Options</span>
-            <h2 className="font-display text-brand-dark text-2xl font-bold mt-4">Additional Services</h2>
+          <div className="text-center max-w-lg mx-auto mb-14">
+            <span className="section-eyebrow">Up Close</span>
+            <h2 className="section-heading mt-3">Photo Gallery</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {otherServices.map((service, i) => (
-              <motion.div
-                key={service}
-                initial={{ opacity: 0, x: -12 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ delay: (i % 6) * 0.06 }}
-                className="flex items-center gap-3 bg-white rounded-xl px-5 py-4 border border-green-border"
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0" />
-                <span className="text-brand-body text-sm">{service}</span>
-              </motion.div>
+          <div className="flex flex-col gap-12">
+            {serviceGalleries.map((gallery) => (
+              <div key={gallery.slug}>
+                <h3 className="font-display text-brand-dark text-xl font-bold mb-5">{gallery.title}</h3>
+                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
+                  {gallery.images.map((img) => (
+                    <motion.button
+                      key={img.src}
+                      type="button"
+                      onClick={() => setLightboxImage(img)}
+                      whileHover={{ scale: 1.03 }}
+                      aria-label={`View ${img.alt}`}
+                      className="relative rounded-xl border border-green-border overflow-hidden group cursor-pointer bg-white"
+                      style={{ aspectRatio: '4/3' }}
+                    >
+                      <img
+                        src={img.src}
+                        alt={img.alt}
+                        loading="lazy"
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                    </motion.button>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
+
+      <Lightbox image={lightboxImage} onClose={() => setLightboxImage(null)} />
 
       {/* ── COMPARISON: HAIR PATCH vs TRANSPLANT ── */}
       <section className="hair-pattern-white" style={{ padding: '80px 0' }}>

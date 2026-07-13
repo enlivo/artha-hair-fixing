@@ -103,7 +103,7 @@ export default function BookingModal() {
                     <div>
                       <h4 className="font-display text-brand-dark text-2xl font-bold mb-2">All Set!</h4>
                       <p className="text-brand-body text-sm leading-relaxed max-w-xs">
-                        Thanks {form.name || 'there'}! We'll confirm your free consultation at Artha Hair Fixing very soon.
+                        Thanks {form.name || 'there'}! We'll confirm your free consultation at Artha Hair Fixing Beauty very soon.
                       </p>
                     </div>
                     <button onClick={handleClose} className="btn-primary">Close</button>
