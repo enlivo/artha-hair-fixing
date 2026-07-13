@@ -63,6 +63,6 @@ export const contactInfo = {
   whatsappMessage: "Hi, I'd like to book a consultation",
   email: 'hairfixingartha@gmail.com',
   website: 'https://www.arthahairfixing.in',
-  hours: { weekdays: 'Monday – Saturday: 10:00 AM – 7:00 PM', sunday: 'Sunday: 11:00 AM – 5:00 PM' },
+  hours: { days: 'Monday – Sunday', time: '9:30 AM – 8:30 PM', display: 'Open Daily: 9:30 AM – 8:30 PM' },
   instagram: 'https://www.instagram.com/hairfixingartha/',
 }

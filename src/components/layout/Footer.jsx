@@ -138,8 +138,7 @@ export default function Footer() {
               {[
                 { icon: <Phone size={14} />, text: contactInfo.phone, href: contactInfo.phoneHref },
                 { icon: <Mail size={14} />, text: contactInfo.email, href: `mailto:${contactInfo.email}` },
-                { icon: <Clock size={14} />, text: contactInfo.hours.weekdays },
-                { icon: <Clock size={14} />, text: contactInfo.hours.sunday },
+                { icon: <Clock size={14} />, text: contactInfo.hours.display },
               ].map(({ icon, text, href }, i) => (
                 <div key={i} className="flex gap-3 items-start">
                   <span className="mt-0.5 shrink-0" style={{ color: '#C9A96E' }}>{icon}</span>

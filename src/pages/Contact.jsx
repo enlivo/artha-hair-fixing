@@ -144,8 +144,7 @@ export default function Contact() {
                 </div>
                 <div className="flex flex-col gap-3">
                   {[
-                    ['Monday – Saturday', contactInfo.hours.weekdays],
-                    ['Sunday', contactInfo.hours.sunday],
+                    [contactInfo.hours.days, contactInfo.hours.time],
                   ].map(([day, time]) => (
                     <div key={day} className="flex justify-between text-sm">
                       <span className="text-brand-muted">{day}</span>
